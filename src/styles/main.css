@@ -1,0 +1,16 @@
+.creative {
+  position: relative;
+  background-color: aqua;
+  width: 500px;
+  height: 500px;
+}
+.container {
+  position: absolute;
+  background-image: url('');
+  width: 300px;
+  height: 600px;
+
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
