@@ -1,3 +1,4 @@
-import './styles/main.css'
-// import './styles/animation.css'
-// import './styles/keyframes.css'
+import './styles/main.scss'
+import './styles/animation.scss'
+import './styles/keyframes.scss'
+import './styles/variables.scss'

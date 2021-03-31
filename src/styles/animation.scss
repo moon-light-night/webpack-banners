@@ -1,4 +1,7 @@
-.anim-on .container {
+// @import './keyframes.scss';
+
+// .anim-on //use only if you need to use cycle
+.container {
   animation-name: anim, fade;
   animation-duration: 1s, 1s;
   animation-delay: 1s, 9s;
