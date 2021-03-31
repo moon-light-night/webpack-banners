@@ -4,11 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const CopyPlugin = require('copy-webpack-plugin')
 // const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
+
+const NODE_ENV = process.env.NODE_ENV
+// const dev = true
+// const devFalse = false
+// const isWatch = NODE_ENV ? devTrue : devFalse
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: 'development',
+  // mode: 'development',
   entry: './index.js',
   output: {
     filename: 'bundle.js',
@@ -28,17 +32,24 @@ module.exports = {
       template: './index.html',
     }),
     new MiniCssExtractPlugin(),
-    new DashboardPlugin(),
   ],
+
+  // watch:
+  //   (NODE_ENV === 'inline' ? true : false) ||
+  //   (NODE_ENV === 'production' ? false : true),
+
   module: {
     rules: [
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        type: 'asset/resource',
+        // type:
+        // NODE_ENV === 'build_not_inline' ? 'asset/resource' : 'asset/inline',
 
         use: [
           //if you need to use inline images
-          // 'url-loader?limit=10000000',
+          NODE_ENV === 'build_inline'
+            ? 'url-loader?limit=10000000'
+            : 'url-loader?limit=1',
           {
             loader: 'img-loader',
             options: {

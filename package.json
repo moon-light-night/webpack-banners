@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "dev": "cross-env NODE_ENV=inline webpack --config ./webpack.config.js",
+    "build-inline": "cross-env NODE_ENV=build_inline webpack --config ./webpack.config.js --mode production",
+    "build-not-inline": "cross-env NODE_ENV=build_not_inline webpack --config ./webpack.config.js --mode production",
     "start": "webpack serve"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "base64-inline-loader": "^1.1.1",
     "browser-sync-webpack-plugin": "^2.3.0",
     "copy-webpack-plugin": "^8.1.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
@@ -41,7 +43,6 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",
-    "webpack-dashboard": "^3.3.1",
     "webpack-dev-server": "^3.11.2"
   }
 }
