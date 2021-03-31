@@ -36,10 +36,12 @@ module.exports = {
                 require('imagemin-mozjpeg')({
                   progressive: true,
                   arithmetic: false,
+                  overshoot: true,
+                  QuantBaseline: true,
                 }),
                 require('imagemin-pngquant')({
-                  floyd: 0.5,
-                  speed: 2,
+                  quality: [0, 0.6],
+                  speed: 1,
                 }),
                 require('imagemin-svgo')({
                   plugins: [{ removeTitle: true }, { convertPathData: false }],
