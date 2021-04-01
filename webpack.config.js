@@ -36,13 +36,17 @@ module.exports = {
     rules: [
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        // type:
-        // NODE_ENV === 'build_not_inline' ? 'asset/resource' : 'asset/inline',
 
         use: [
           NODE_ENV === 'build_inline'
             ? 'url-loader?limit=10000000'
-            : 'url-loader?limit=1',
+            : {
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name].[ext]',
+                  path: './src/assets',
+                },
+              },
           {
             loader: 'img-loader',
             options: {

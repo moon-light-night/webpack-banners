@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-inline": "cross-env NODE_ENV=build_inline webpack --config ./webpack.config.js --mode production",
-    "build-not-inline": "cross-env NODE_ENV=build_not_inline webpack --config ./webpack.config.js --mode production",
+    "build-sources": "cross-env NODE_ENV=build_sources webpack --config ./webpack.config.js --mode production",
     "serve": "webpack serve"
   },
   "repository": {
