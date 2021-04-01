@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=inline webpack --config ./webpack.config.js",
     "build-inline": "cross-env NODE_ENV=build_inline webpack --config ./webpack.config.js --mode production",
     "build-not-inline": "cross-env NODE_ENV=build_not_inline webpack --config ./webpack.config.js --mode production",
-    "start": "webpack serve"
+    "serve": "webpack serve"
   },
   "repository": {
     "type": "git",
